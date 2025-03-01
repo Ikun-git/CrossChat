@@ -19,7 +19,7 @@
 
 1. 複製此存儲庫：
     ```bash
-    git clone https://github.com/yourusername/crosschat.git
+    git clone https://github.com/Ikun-git/CrossChat.git
     cd crosschat
     ```
 
