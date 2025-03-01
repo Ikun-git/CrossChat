@@ -74,6 +74,8 @@ npm run dev
 ![收到訊息範例](ExampleGotMessage.png)
 
 #### 發送訊息
+![發送訊息範例](ExampleDirectSend.png)
+
 ## 參考
 
 - [LINE Messaging API](https://developers.line.biz/en/docs/messaging-api/)
