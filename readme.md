@@ -16,13 +16,22 @@
 - 具有適當權限和 Webhook 的 Discord 機器人
 
 ## 安裝
-
+- 方式 1
 1. 複製此存儲庫：
     ```bash
     git clone https://github.com/yourusername/crosschat.git
     cd crosschat
     ```
-
+2. 使用設定幫手 :
+   ```bash
+   node setup.js
+   ```
+- 方式 2
+1. 複製此存儲庫：
+    ```bash
+    git clone https://github.com/yourusername/crosschat.git
+    cd crosschat
+    ```
 2. 安裝依賴項：
     ```bash
     npm install
