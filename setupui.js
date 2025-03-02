@@ -378,19 +378,3 @@ async function setup() {
 
 // Run the setup
 setup();
-const { runnow } = inquirer.prompt([
-  {
-    type: "confirm",
-    name: "runnow",
-    message: "是否現在啟動CrossChat？",
-    default: false,
-  },
-]);
-
-if (runnow) {
-  const app = spawn("npm", ["start"], { stdio: "inherit" });
-
-  app.on("error", (error) => {
-    console.error(`啟動CrossChat時出錯: ${error.message}`);
-  });
-}
