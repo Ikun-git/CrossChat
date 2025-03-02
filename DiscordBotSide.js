@@ -13,7 +13,7 @@ const client = new Client({
 
 // Ready event handler
 client.on("ready", () => {
-  client.user.setActivity("運行中");
+  client.user.setActivity("CrossChat 運行中");
   console.log(`在 ${client.guilds.cache.size} 個伺服器載入.`);
 });
 
@@ -42,13 +42,13 @@ client.on('messageCreate', async (msg) => {
       return;
     }
   }
-  if (msg.content == "!line") {
-    return msg.reply('指令說明:\n' + 
-      '`!line direct <userId> <message>` - 傳送直接訊息\n' +
-      '`!line reply <userId> <messageId> <message>` - 傳送回覆訊息');
+  if (msg.content == "!cc ") {
+    return msg.reply('CrossChat 指令說明:\n' + 
+      '`!cc direct <userId> <message>` - 傳送直接訊息\n' +
+      '`!cc reply <userId> <quoteToken> <message>` - 傳送回覆訊息');
   }
 
-  const prefix = '!line ';  // Added space after !line
+  const prefix = '!cc ';  // Added space after !cc 
   if (!msg.content.startsWith(prefix)) return;
 
   const args = msg.content.slice(prefix.length).trim().split(/ +/);
@@ -60,11 +60,11 @@ client.on('messageCreate', async (msg) => {
   }
 
   if (type === 'direct' && args.length < 2) {
-    return msg.reply('用法: `!line direct <userId> <message>`'); 
+    return msg.reply('用法: `!cc direct <userId> <message>`'); 
   }
 
   if (type === 'reply' && args.length < 3) {
-    return msg.reply('用法: `!line reply <userId> <quoteToken> <message>`'); 
+    return msg.reply('用法: `!cc reply <userId> <quoteToken> <message>`'); 
   }
 
   const lineUserId = args.shift();
