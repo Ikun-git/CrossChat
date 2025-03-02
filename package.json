@@ -4,8 +4,8 @@
   "description": "A bridge between Discord and LINE messaging platforms",
   "main": "index.js",
   "scripts": {
-    "start": "concurrently -p \"[{name}]\" -n \"Discord,Line\" -c \"#7289da,#06c755\" \"node LineBotSide.js\" \"node DiscordBotSide.js\"",
-    "dev": "concurrently -p \"[{name}]\" -n \"Discord,Line\" -c \"#7289da,#06c755\" \"nodemon LineBotSide.js\" \"nodemon DiscordBotSide.js\""
+    "start": "concurrently -p \"[{name}]\" -n \"Discord,Line\" -c \"#7289da,#06c755\" \"node DiscordBotSide.js\" \"node LineBotSide.js\"",
+    "dev": "concurrently -p \"[{name}]\" -n \"Discord,Line\" -c \"#7289da,#06c755\" \"nodemon DiscordBotSide.js\" \"nodemon LineBotSide.js\""
   },
   "keywords": [
     "line",
