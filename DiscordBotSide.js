@@ -42,7 +42,7 @@ client.on('messageCreate', async (msg) => {
       return;
     }
   }
-  if (msg.content == "!cc ") {
+  if (msg.content == "!cc") {
     return msg.reply('CrossChat 指令說明:\n' + 
       '`!cc direct <userId> <message>` - 傳送直接訊息\n' +
       '`!cc reply <userId> <quoteToken> <message>` - 傳送回覆訊息');
