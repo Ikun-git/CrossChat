@@ -107,9 +107,7 @@ function createEnvFile(envVars) {
  * Main setup function
  */
 async function setup() {
-  console.log(
-    chalk.cyan.bold(figlet.textSync("CrossChat", { horizontalLayout: "full" }))
-  );
+  spawn('node', ['icon.js'], { stdio: 'inherit' });
   console.log(chalk.cyan.bold("━ CrossChat 環境設置 ━\n"));
 
   try {
