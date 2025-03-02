@@ -16,6 +16,10 @@
 - 具有適當權限和 Webhook 的 Discord 機器人
 
 ## 安裝
+#### 建議在 [Glitch](https://glitch.com/) 上佈署Line端，因為只會在收到訊息時開機，免費版有1000小時的時間。
+##### 跑七個禮拜的結果
+![跑七個禮拜的結果](https://github.com/user-attachments/assets/36b304c1-b365-49c2-a872-a9edbafd714c)
+
 - 方式 1
 1. 複製此存儲庫：
     ```bash
