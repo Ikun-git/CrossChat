@@ -1,5 +1,4 @@
 const { Webhook } = require('discord-webhook-node');
-const { spawn } = require('child_process');
 require('dotenv').config();
 const hook = new Webhook(process.env.DISCORD_WEBHOOK_URL);
 const linebot = require("linebot");
@@ -35,7 +34,7 @@ bot.on("message", async function (event) {
 
 // Bot所監聽的webhook路徑與port
 bot.listen("/linewebhook", 3000, function () {
-  spawn('node', ['icon.js'], { stdio: 'inherit' });
+  
   console.log("[Websocket 已準備就緒]");
   console.log("[LINE Bot 已啟動]");
   console.log("Webhook URL: " + "localhost:3000/linewebhook" );
