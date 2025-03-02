@@ -53,12 +53,16 @@ npm start
 ```bash
 npm run dev
 ```
+#### 建議在 [Glitch](https://glitch.com/) 上佈署Line端，因為只會在收到訊息時開機，免費版有1000小時的時間。
+##### 跑七個禮拜的結果
+![跑七個禮拜的結果](https://github.com/user-attachments/assets/36b304c1-b365-49c2-a872-a9edbafd714c)
+
 
 ### Discord 指令
 
-- `!line` - 顯示指令說明
-- `!line direct <userId> <message>` - 發送直接訊息
-- `!line reply <userId> <quoteToken> <message>` - 發送回覆訊息
+- `!cc` - 顯示指令說明
+- `!cc direct <userId> <message>` - 發送直接訊息
+- `!cc reply <userId> <quoteToken> <message>` - 發送回覆訊息
 
 ### 使用範例
 
