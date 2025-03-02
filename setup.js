@@ -1,6 +1,6 @@
 const { exec, spawn } = require('child_process');
-console.log('安裝 chalk figlet...');
-exec('npm install chalk figlet', (error, stdout, stderr) => {
+console.log('安裝 chalk...');
+exec('npm install chalk', (error, stdout, stderr) => {
   if (error) {
     console.error(`安裝 chalk 時出錯: ${error.message}`);
     return;
