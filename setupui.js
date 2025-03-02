@@ -7,7 +7,13 @@ const inquirer = require("inquirer");
 const Table = require("cli-table3");
 const figlet = require("figlet");
 
-function installDependencies() {
+function sleep(ms) {
+  return new Promise((resolve) => {
+    setTimeout(resolve, ms);
+  });
+}
+async function installDependencies() {
+  await sleep(20);
   console.log(chalk.cyan.bold("安裝 npm 依賴項..."));
   return new Promise((resolve, reject) => {
     exec("npm install", (error) => {
@@ -106,41 +112,44 @@ function createEnvFile(envVars) {
 /**
  * Main setup function
  */
-async function setup() {
-  
-  
-  const discordhex = chalk.hex('#06c755'); 
-  const linehex = chalk.hex('#7289da');  
-  
-  
-  figlet.text('Cross Chat', {
-    font: 'Standard',
-    horizontalLayout: 'default',
-    verticalLayout: 'default'
-  }, function(err, data) {
+const discordhex = chalk.hex("#06c755");
+const linehex = chalk.hex("#7289da");
+
+figlet.text(
+  "Cross Chat",
+  {
+    font: "Standard",
+    horizontalLayout: "default",
+    verticalLayout: "default",
+  },
+  function (err, data) {
     if (err) {
-      console.log('Something went wrong...');
+      console.log("Something went wrong...");
       console.dir(err);
       return;
     }
-    
-    const lines = data.split('\n');
-    const splitPosition = 25; 
-    
+
+    const lines = data.split("\n");
+    const splitPosition = 25;
+
     // Apply different colors to each part
-    const coloredText = lines.map(line => {
-      const firstPart = line.substring(0, splitPosition);
-      const secondPart = line.substring(splitPosition);
-      return discordhex(firstPart) + linehex(secondPart);
-    }).join('\n');
+    const coloredText = lines
+      .map((line) => {
+        const firstPart = line.substring(0, splitPosition);
+        const secondPart = line.substring(splitPosition);
+        return discordhex(firstPart) + linehex(secondPart);
+      })
+      .join("\n");
     console.log(coloredText);
-  });
-  
+  }
+);
+
+async function setup() {
   console.log(chalk.cyan.bold("━ CrossChat 環境設置 ━\n"));
 
   try {
     await installDependencies();
-    
+
     // Check if .env file already exists
     if (fs.existsSync(".env")) {
       const { overwrite } = await inquirer.prompt([
@@ -212,7 +221,5 @@ async function setup() {
   }
 }
 
-
 // Run the setup
 setup();
-
